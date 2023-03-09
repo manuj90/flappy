@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  height: 100vh;
+  background: rgb(195, 34, 115);
+  background: linear-gradient(
+    0deg,
+    rgba(195, 34, 115, 1) 0%,
+    rgba(253, 189, 45, 1) 100%
+  );
+}
+
+canvas{
+    border: 0.5rem solid black;
+    border-radius: 1rem;
+    display: block;
+    margin: 50px auto;
+    box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.719);
+    background-image: url("/assets/day.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
