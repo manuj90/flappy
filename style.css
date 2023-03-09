@@ -6,14 +6,8 @@
 
 body {
   font-family: 'Press Start 2P', cursive;
-  height: 100vh;
-  background: rgb(195, 34, 115);
-  background: linear-gradient(
-    0deg,
-    rgba(195, 34, 115, 1) 0%,
-    rgba(253, 189, 45, 1) 100%
-  );
-  background-size: cover;
+ background: rgb(251,63,177);
+background: radial-gradient(circle, rgba(251,63,177,1) 0%, rgba(252,161,70,1) 100%);
 }
 
 canvas {
@@ -26,6 +20,11 @@ canvas {
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+}
+
+.bluried{
+  -webkit-filter: blur(16px);
+  filter: blur(16px);
 }
 
 #end-menu {
@@ -42,8 +41,8 @@ canvas {
   gap: 1rem;
   background: rgba(0, 0, 0, 0.55);
   box-shadow: 0 8px 32px 1rem rgba(0, 0, 0, 0.37);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -61,8 +60,8 @@ canvas {
   padding: 0.6rem;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   transition: all 0.3s ease-in-out;
