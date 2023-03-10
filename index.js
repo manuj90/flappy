@@ -19,7 +19,7 @@ const PIPE_GAP = 125;
 
 let avatarX = 50;
 let avatarY = 50;
-let avatardVelocity = 0;
+let avatarVelocity = 0;
 let avatarAceleration = 0.1;
 
 let pipeX = 400;
@@ -32,7 +32,7 @@ let scored = false;
 
 document.body.onkeyup = function (e) {
   if (e.code === "Space") {
-    avatardVelocity = FLAP_SPEED;
+    avatarVelocity = FLAP_SPEED;
   }
 };
 
@@ -122,7 +122,7 @@ const closeEndMenu = () => {
 const resetGame = () => {
   avatarX = 50;
   avatarY = 50;
-  avatardVelocity = 0;
+  avatarVelocity = 0;
   avatarAceleration = 0.1;
   pipeX = 400;
   pipeY = canvas.height - 200;
@@ -156,8 +156,8 @@ const loop = () => {
     pipeY = Math.random() * (canvas.height - PIPE_GAP) + PIPE_WIDTH;
   }
 
-  avatardVelocity += avatarAceleration;
-  avatarY += avatardVelocity;
+  avatarVelocity += avatarAceleration;
+  avatarY += avatarVelocity;
 
   increaseScore();
   requestAnimationFrame(loop);
