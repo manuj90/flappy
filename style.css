@@ -5,9 +5,19 @@
 }
 
 body {
-  font-family: 'Press Start 2P', cursive;
- background: rgb(251,63,177);
-background: radial-gradient(circle, rgba(251,63,177,1) 0%, rgba(252,161,70,1) 100%);
+  font-family: "Press Start 2P", cursive;
+  background: rgb(98, 148, 60);
+  background: radial-gradient(
+    circle,
+    rgba(98, 148, 60, 1) 0%,
+    rgba(86, 190, 255, 1) 100%
+  );
+  /* background: rgb(7, 125, 130);
+  background: radial-gradient(
+    circle,
+    rgba(7, 125, 130, 1) 0%,
+    rgba(2, 0, 65, 1) 100%
+  ); */
 }
 
 canvas {
@@ -16,13 +26,13 @@ canvas {
   display: block;
   margin: 50px auto;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.719);
-  background-image: url('/assets/day.webp');
+  background-image: url("/assets/day.webp");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
 }
 
-.bluried{
+.bluried {
   -webkit-filter: blur(16px);
   filter: blur(16px);
 }
@@ -54,7 +64,7 @@ canvas {
 }
 
 #start-over {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: whitesmoke;
   margin: 2rem 0 2rem 0;
   padding: 0.6rem;

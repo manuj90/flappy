@@ -3,12 +3,13 @@ const context = canvas.getContext("2d");
 const gameContainer = document.getElementById("game-container");
 
 const flappyDay = new Image();
-flappyDay.src = "/assets/bird.png";
+flappyDay.src = "/assets/bird.webp";
 
 const flapyNight = new Image();
 flapyNight.src = "/assets/bat.webp";
 
 const color = "#eabefb ";
+// const color = "#89613a ";
 
 const FLAP_SPEED = -5;
 const AVATAR_WIDTH = 30;
@@ -126,7 +127,7 @@ const resetGame = () => {
   pipeX = 400;
   pipeY = canvas.height - 200;
   score = 0;
-  scoreScreen.innerHTML = score 
+  scoreScreen.innerHTML = score;
 };
 
 const endGame = () => {
@@ -135,6 +136,8 @@ const endGame = () => {
 
 const loop = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
+
+  //Aca seleccionamos la imagen, por lo que deberia de recibirlo desde una prop.
 
   context.drawImage(flappyDay, avatarX, avatarY);
 
