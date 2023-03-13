@@ -8,6 +8,8 @@ flappyDay.src = "/assets/bird.webp";
 const flapyNight = new Image();
 flapyNight.src = "/assets/bat.webp";
 
+const avatar = flappyDay
+
 const color = "#eabefb ";
 // const color = "#89613a ";
 
@@ -139,7 +141,7 @@ const loop = () => {
 
   //Aca seleccionamos la imagen, por lo que deberia de recibirlo desde una prop.
 
-  context.drawImage(flappyDay, avatarX, avatarY);
+  context.drawImage(avatar, avatarX, avatarY);
 
   context.fillStyle = color;
   context.fillRect(pipeX, -100, PIPE_WIDTH, pipeY);
