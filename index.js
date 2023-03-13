@@ -138,7 +138,7 @@ const endGame = () => {
 
 const setGameTheme = () => {
   lightBtn.addEventListener('click', () => {
-    gameContainer.classList.remove('bluried');
+    gameContainer.classList.remove('bluried-start');
     document.getElementById('body').classList.remove('start');
     document.getElementById('body').classList.add('light-mode');
     canvas.classList.remove('canvas-start');
@@ -149,7 +149,7 @@ const setGameTheme = () => {
     loop();
   });
   darkBtn.addEventListener('click', () => {
-    gameContainer.classList.remove('bluried');
+    gameContainer.classList.remove('bluried-start');
     document.getElementById('body').classList.remove('start');
     document.getElementById('body').classList.add('dark-mode');
     canvas.classList.remove('canvas-start');

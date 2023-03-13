@@ -110,6 +110,11 @@ canvas {
   filter: blur(16px);
 }
 
+.bluried-start {
+  -webkit-filter: contrast(5);
+  filter: saturate(5);
+}
+
 #start-menu {
   color: whitesmoke;
   text-align: center;
