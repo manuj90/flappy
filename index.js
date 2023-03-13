@@ -1,17 +1,17 @@
-const canvas = document.getElementById("game-canvas");
-const context = canvas.getContext("2d");
-const gameContainer = document.getElementById("game-container");
+const canvas = document.getElementById('game-canvas');
+const context = canvas.getContext('2d');
+const gameContainer = document.getElementById('game-container');
+const lightBtn = document.getElementById('light-start');
+const darkBtn = document.getElementById('dark-start');
 
 const flappyDay = new Image();
-flappyDay.src = "/assets/bird.webp";
+flappyDay.src = '/assets/bird.webp';
 
-const flapyNight = new Image();
-flapyNight.src = "/assets/bat.webp";
+const flappyNight = new Image();
+flappyNight.src = '/assets/bat.webp';
 
-const avatar = flappyDay
-
-const color = "#eabefb ";
-// const color = "#89613a ";
+let avatar;
+let color;
 
 const FLAP_SPEED = -5;
 const AVATAR_WIDTH = 30;
@@ -27,18 +27,18 @@ let avatarAceleration = 0.1;
 let pipeX = 400;
 let pipeY = canvas.height - 200;
 
-let scoreScreen = document.getElementById("score-display");
+let scoreScreen = document.getElementById('score-display');
 let score = 0;
 let highScore = 0;
 let scored = false;
 
 document.body.onkeyup = function (e) {
-  if (e.code === "Space") {
+  if (e.code === 'Space') {
     avatarVelocity = FLAP_SPEED;
   }
 };
 
-document.getElementById("start-over").addEventListener("click", function () {
+document.getElementById('start-over').addEventListener('click', function () {
   closeEndMenu();
   resetGame();
   loop();
@@ -107,18 +107,18 @@ const collisionCheck = () => {
 };
 
 const endMenu = () => {
-  document.getElementById("end-menu").style.display = "block";
-  gameContainer.classList.add("bluried");
-  document.getElementById("end-score").innerHTML = score;
-  document.getElementById("best-score").innerHTML = highScore;
+  document.getElementById('end-menu').style.display = 'block';
+  gameContainer.classList.add('bluried');
+  document.getElementById('end-score').innerHTML = score;
+  document.getElementById('best-score').innerHTML = highScore;
   if (highScore < score) {
     highScore = score;
   }
 };
 
 const closeEndMenu = () => {
-  document.getElementById("end-menu").style.display = "none";
-  gameContainer.classList.remove("bluried");
+  document.getElementById('end-menu').style.display = 'none';
+  gameContainer.classList.remove('bluried');
 };
 
 const resetGame = () => {
@@ -134,6 +134,31 @@ const resetGame = () => {
 
 const endGame = () => {
   endMenu();
+};
+
+const setGameTheme = () => {
+  lightBtn.addEventListener('click', () => {
+    gameContainer.classList.remove('bluried');
+    document.getElementById('body').classList.remove('start');
+    document.getElementById('body').classList.add('light-mode');
+    canvas.classList.remove('canvas-start');
+    canvas.classList.add('canvas-light');
+    document.getElementById('start-menu').style.display = 'none';
+    color = '#eabefb ';
+    avatar = flappyDay;
+    loop();
+  });
+  darkBtn.addEventListener('click', () => {
+    gameContainer.classList.remove('bluried');
+    document.getElementById('body').classList.remove('start');
+    document.getElementById('body').classList.add('dark-mode');
+    canvas.classList.remove('canvas-start');
+    canvas.classList.add('canvas-dark');
+    document.getElementById('start-menu').style.display = 'none';
+    color = '#89613a ';
+    avatar = flappyNight;
+    loop();
+  });
 };
 
 const loop = () => {
@@ -165,4 +190,4 @@ const loop = () => {
   requestAnimationFrame(loop);
 };
 
-loop();
+setGameTheme();

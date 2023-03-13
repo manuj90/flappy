@@ -13,7 +13,17 @@
     <link rel="stylesheet" href="style.css" />
     <title>Flappy</title>
   </head>
-  <body>
+  <body id="body" class="start">
+    <div id="start-menu" class="">
+      <div class="text-end-menu">
+        <h1>Welcome!</h1>
+        <h5>choose your theme</h5>
+      </div>
+      <div id="btn-options">
+        <button id="light-start">Light</button>
+        <button id="dark-start">Dark</button>
+      </div>
+    </div>
 
     <div id="end-menu">
       <div class="text-end-menu">
@@ -25,8 +35,7 @@
     </div>
 
     <div id="game-container">
-      <canvas id="game-canvas" width="380" height="600"></canvas>
-
+      <canvas id="game-canvas" class="canvas-start" width="380" height="600"></canvas>
       <div id="score-display">0</div>
     </div>
 

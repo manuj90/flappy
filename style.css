@@ -5,19 +5,76 @@
 }
 
 body {
-  font-family: "Press Start 2P", cursive;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.start {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #efff00,
+    #00ff15,
+    #00fcff,
+    #0009ff,
+    #d900ff
+  );
+  background-size: 1200% 1200%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.light-mode {
   background: rgb(98, 148, 60);
   background: radial-gradient(
     circle,
     rgba(98, 148, 60, 1) 0%,
     rgba(86, 190, 255, 1) 100%
   );
-  /* background: rgb(7, 125, 130);
+}
+
+.dark-mode {
+  background: rgb(7, 125, 130);
   background: radial-gradient(
     circle,
     rgba(7, 125, 130, 1) 0%,
     rgba(2, 0, 65, 1) 100%
-  ); */
+  );
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 canvas {
@@ -26,15 +83,59 @@ canvas {
   display: block;
   margin: 50px auto;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.719);
-  background-image: url("/assets/day.webp");
+  z-index: 1;
+}
+
+.canvas-start {
+  background-image: url('/assets/house.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 1;
+  background-position: 50% 50%;
+}
+
+.canvas-light {
+  background-image: url('/assets/day.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.canvas-dark {
+  background-image: url('/assets/night.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bluried {
   -webkit-filter: blur(16px);
   filter: blur(16px);
+}
+
+#start-menu {
+  color: whitesmoke;
+  text-align: center;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  margin: 50px auto;
+  width: 20rem;
+  padding: 2rem;
+  z-index: 2;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 32px 1rem rgba(0, 0, 0, 0.37);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#btn-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 2rem;
 }
 
 #end-menu {
@@ -63,8 +164,10 @@ canvas {
   gap: 1rem;
 }
 
-#start-over {
-  font-family: "Press Start 2P", cursive;
+#start-over,
+#light-start,
+#dark-start {
+  font-family: 'Press Start 2P', cursive;
   color: whitesmoke;
   margin: 2rem 0 2rem 0;
   padding: 0.6rem;
@@ -77,11 +180,15 @@ canvas {
   transition: all 0.3s ease-in-out;
 }
 
-#start-over:hover {
+#start-over:hover,
+#light-start:hover,
+#dark-start:hover {
   transform: scale(1.1);
 }
 
-#start-over:active {
+#start-over:active,
+#light-start:active,
+#dark-start:active {
   transform: scale(0.9);
 }
 
