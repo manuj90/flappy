@@ -47,8 +47,6 @@ document.getElementById('start-over').addEventListener('click', function () {
 const increaseScore = () => {
   if (
     avatarX > pipeX + PIPE_WIDTH &&
-    (avatarX < pipeY + PIPE_GAP ||
-      avatarY + AVATAR_HEIGHT > pipeY + PIPE_GAP) &&
     !scored
   ) {
     score++;
